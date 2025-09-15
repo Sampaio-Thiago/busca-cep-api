@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/ws/30140071/json"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "30140071.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

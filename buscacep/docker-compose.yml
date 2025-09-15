@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: buscacep-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - wiremock
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/buscacep
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      API_BASE_URL: http://wiremock:8081
+
+  db:
+    image: postgres:15
+    container_name: buscacep-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: buscacep
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  wiremock:
+    image: wiremock/wiremock:3.3.1
+    container_name: buscacep-wiremock
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./wiremock:/home/wiremock
+
+volumes:
+  pgdata:
