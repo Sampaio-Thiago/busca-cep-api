@@ -1,7 +1,7 @@
 package com.sampaiodev.buscacep.controller;
 
 import com.sampaiodev.buscacep.model.CepResponse;
-import com.sampaiodev.buscacep.service.CepService;
+import com.sampaiodev.buscacep.domain.service.CepService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,7 +1,7 @@
-package com.sampaiodev.buscacep.service;
+package com.sampaiodev.buscacep.domain.service;
 
 import com.sampaiodev.buscacep.model.LogConsulta;
-import com.sampaiodev.buscacep.repository.LogRepository;
+import com.sampaiodev.buscacep.domain.repository.LogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
